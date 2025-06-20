@@ -1,0 +1,160 @@
+\newpage
+
+\appendix
+\setcounter{theorem}{0}
+\section{Теорема (Грабовой 2019)}\label{ProofTheorem1}
+\begin{theorem}\label{th:1} 
+Пусть задано множество подпространств~$\mathbb{W}$ пространства~$\mathbb{R}^{n}$, каждое подпространство которого задается базисом~$\mathbf{W}_i\in \mathbf{W}$, тогда функция расстояния~$\rho\left(\textbf{W}_1, \textbf{W}_2\right)$ является метрикой заданой на множестве базисов~$\mathbf{W}$:
+\begin{equation}
+\label{eq:th2:1}
+\begin{aligned}
+\rho\left(\textbf{W}_1, \textbf{W}_2\right) = \max\left(\max_{\textbf{e}_2 \in \textbf{W}_2} h_{1}\left(\textbf{e}_2\right), \max_{\textbf{e}_1 \in \textbf{W}_1} h_{2}\left(\textbf{e}_1\right)\right),
+\end{aligned}
+\end{equation}
+где~$\textbf{e}_i$ это базисный вектор из~$\textbf{W}_i$,~$h_i\left(\textbf{e}\right)$ является расстоянием от вектора~$\textbf{e}$ до пространства заданого базисом~$\textbf{W}_i$.
+\end{theorem}
+\begin{proof}
+Для доказательства данной теоремы, нужно показать, что функция~$\rho$ удовлетворяет трем свойствам метрики.
+
+Функция~$\rho$ удовлетворяет первому свойству метрики:
+\begin{equation}
+\label{eq:th2:2}
+\begin{aligned}
+\rho\left(\textbf{W}_1, \textbf{W}_2\right) = 0 \Leftrightarrow \textbf{W}_1 = \textbf{W}_2
+\end{aligned}
+\end{equation}
+
+Функция~$\rho$ удовлетворяет второму свойству метрики:
+\begin{equation}
+\label{eq:th2:3}
+\begin{aligned}
+\rho\left(\textbf{W}_1, \textbf{W}_2\right) = \rho\left(\textbf{W}_2, \textbf{W}_1\right)
+\end{aligned}
+\end{equation}
+
+Докажем, что функция~$\rho$ удовлетворяет удовлетворяет неравенству треугольника:
+\begin{equation}
+\label{eq:th2:4}
+\begin{aligned}
+\rho\left(\textbf{W}_1, \textbf{W}_2\right) \leq \rho\left(\textbf{W}_1, \textbf{W}_3\right) + \rho\left(\textbf{W}_3, \textbf{W}_2\right)
+\end{aligned}
+\end{equation}
+
+Для доказательства неравенства треугольника докажем неравенства:
+\begin{equation}
+\label{eq:th2:5}
+\begin{aligned}
+\max_{\textbf{e}_1 \in \textbf{W}_1}h_{2}\left(\textbf{e}_1\right) \leq 
+\max_{\textbf{e}_1\in \textbf{W}_1}h_{3}\left(\textbf{e}_1\right)+
+\max_{\textbf{e}_3 \in \textbf{W}_3}h_{2}\left(\textbf{e}_3\right) \\
+\max_{\textbf{e}_2 \in \textbf{W}_2}h_{1}\left(\textbf{e}_2\right) \leq 
+\max_{\textbf{e}_2\in \textbf{W}_2}h_{3}\left(\textbf{e}_2\right)+
+\max_{\textbf{e}_3 \in \textbf{W}_3}h_{1}\left(\textbf{e}_3\right)
+\end{aligned}
+\end{equation}
+
+Используя Лемму~\ref{lem:1} доказательство неравенства (\ref{eq:th2:5}) сводится к доказательства неравенства:
+\begin{equation}
+\label{eq:th2:6}
+\begin{aligned}
+\max_{\substack{\textbf{a} \in \textbf{W}_1 \\ \left|\textbf{a}\right| \leq 1}}h_{2}\left(\textbf{a}\right) \leq 
+\max_{\substack{\textbf{a} \in \textbf{W}_1 \\ \left|\textbf{a}\right| \leq 1}}h_{3}\left(\textbf{a}\right)+
+\max_{\substack{\textbf{c} \in \textbf{W}_3 \\ \left|\textbf{c}\right| \leq 1}}h_{2}\left(\textbf{c}\right),
+\end{aligned}
+\end{equation}
+где~$\textbf{a}, \textbf{c}$ произвольные элементы из соответствующих подпространств. 
+
+Подставив в выражение~(\ref{eq:th2:6}) выражение для~$h_i\left(\textbf{a}\right)$, получаем следующее неравенство:
+\begin{equation}
+\label{eq:th2:7}
+\begin{aligned}
+\max_{\substack{\textbf{a} \in \textbf{W}_1 \\ \left|\textbf{a}\right| \leq 1}} \min_{\substack{\textbf{b} \in \textbf{W}_2 \\ \left|\textbf{b}\right| \leq 1}}||\textbf{a} - \textbf{b}|| \leq 
+\max_{\substack{\textbf{a} \in \textbf{W}_1 \\ \left|\textbf{a}\right| \leq 1}} \min_{\substack{\textbf{c} \in \textbf{W}_3 \\ \left|\textbf{b}\right| \leq 1}}||\textbf{a} - \textbf{c}||+
+\max_{\substack{\textbf{c} \in \textbf{W}_3 \\ \left|\textbf{c}\right| \leq 1}} \min_{\substack{\textbf{b} \in \textbf{W}_2 \\ \left|\textbf{b}\right| \leq 1}}||\textbf{c} - \textbf{b}||.
+\end{aligned}
+\end{equation}
+
+Неравенство~(\ref{eq:th2:7}) следует из Леммы~\ref{lem:2}. Из выполнения неравенства~(\ref{eq:th2:7}) следует выполнение неравенств~(\ref{eq:th2:5}).
+Докажем неравенство треугольника~(\ref{eq:th2:4}) используя неравенства~(\ref{eq:th2:5}). Для удобства введем следующие обозначения:
+\begin{equation}
+\label{eq:th2:8}
+\begin{aligned}
+\max_{\textbf{e}_i \in \textbf{W}_i} h_{\textbf{W}_j}\left(\textbf{e}_i\right) = h_{i}^{j}.
+\end{aligned}
+\end{equation}
+
+Из истинности неравенства~(\ref{eq:th2:7}) в обозначениях~(\ref{eq:th2:8}) следует истинность следующих неравенств:
+ 
+\begin{equation}
+\label{eq:th2:9}
+\begin{aligned}
+\quad h_{1}^{2} \leq h_{1}^{3} + h_{3}^{2} \leq \max\left(h_{1}^{3}, h_{3}^{1}\right) + \max\left(h_{3}^{2}, h_{2}^{3}\right)\\
+\quad h_{2}^{1} \leq h_{2}^{3} + h_{3}^{1} \leq \max\left(h_{2}^{3}, h_{3}^{2}\right) + \max\left(h_{3}^{1}, h_{1}^{3}\right)\\
+\end{aligned}
+\end{equation}
+
+Из уравнения~(\ref{eq:th2:9}) следует выполнение неравенства:
+\begin{equation}
+\label{eq:th2:10}
+\begin{aligned}
+\max\left(h_{1}^{2}, h_{2}^{1}\right) \leq  \max\left(h_{1}^{3}, h_{3}^{1}\right) + \max\left(h_{3}^{2}, h_{2}^{3}\right)\\
+\end{aligned}
+\end{equation}
+
+Доказательство неравенства~(\ref{eq:th2:10}) указывает на выполнение неравенства треугольника для функции~$\rho$, что завершает доказательство того, что~$\rho$ является метрикой.
+
+\end{proof}
+
+
+\begin{lemma} \label{lem:1} 
+Пусть заданы два подпространства~$\mathbb{X}, \mathbb{Y} \subset \mathbb{R}^{n}$, которые задаются базисами~$\textbf{W}_1$ и~$\textbf{W}_2$, тогда справедливо следующее условие:
+
+\begin{equation}
+\label{eq:l1:1}
+\begin{aligned}
+\max_{\textbf{a} \in \mathbb{X}:~\left|\textbf{a}\right|\leq 1}h_2\left(\textbf{a}\right)
+\end{aligned}
+\end{equation}
+где~$h_i\left(\textbf{a}\right)$ является расстоянием от вектора~$\textbf{a}$ до пространства заданого базисом~$\textbf{W}_i$.
+\end{lemma}
+
+\begin{proof}
+\begin{equation}
+\label{eq:l1:2}
+\begin{aligned}
+\max_{\textbf{a} \in \mathbb{X}:~\left|\textbf{a}\right|\leq 1}h_2\left(\textbf{a}\right) = \max_{\textbf{a} \in \mathbb{X}:~\left|\textbf{a}\right|\leq 1}\left|\textbf{a}-\sum_{i}\langle \textbf{e}^i_2, \textbf{a} \rangle\textbf{e}^i_2 \right| = \\ 
+=\max_{\{\alpha_j\}_{j}:~\sum\alpha_j^2\leq 1}\left|\sum_{j}\alpha_j\textbf{e}^{j}_1-\sum_{i}\langle \textbf{e}^i_2, \sum_{j}\alpha_j\textbf{e}^{j}_1 \rangle\textbf{e}^i_2 \right| =\\
+= \max_{\{\alpha_j\}_{j}:~\sum\alpha_j^2\leq 1}\left|\sum_{j}\alpha_j\left(\textbf{e}_3^j - \sum_{i}\langle\textbf{e}_3^j,\textbf{e}_2^i\rangle\textbf{e}_2^i\right)\right|,
+\end{aligned}
+\end{equation}
+где в выражении~(\ref{eq:l1:2}) максимум очевидно достигается на~$j$-ом базисном векторе для которого выражение в скобках является максимальным.
+\end{proof}
+
+
+
+
+\begin{lemma} \label{lem:2} 
+Пусть заданы подпространства~$\mathbb{X}, \mathbb{Y}, \mathbb{Z} \subset \mathbb{R}^{n}$, которые задаются базисами~$\textbf{W}_1, \textbf{W}_2, \textbf{W}_3$ соответственно, тогда справедливо следующее условие:
+
+\begin{equation}
+\label{eq:l2:1}
+\begin{aligned}
+\max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{x}-\textbf{y}||\leq 
+\max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{z} \in \mathbb{Z} \\ \left|\textbf{z}\right|\leq 1}}||\textbf{x}-\textbf{z}|| + 
+\max_{\substack{\textbf{z} \in \mathbb{Z} \\ \left|\textbf{z}\right|\leq 1}}\min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{z}-\textbf{y}||.
+\end{aligned}
+\end{equation}
+\end{lemma}
+
+\begin{proof} 
+\begin{equation}
+\label{eq:l2:2}
+\begin{aligned}
+\max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{x}-\textbf{y}||\leq
+\max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}\left(||\textbf{x}-\textbf{z}|| + ||\textbf{z} - \textbf{y}||\right) = \\
+\max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}||\textbf{x}-\textbf{z}|| + \min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{z} - \textbf{y}|| = \max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{z} \in \mathbb{Z} \\ \left|\textbf{z}\right|\leq 1}}||\textbf{x}-\textbf{z}|| + \min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{z} - \textbf{y}|| \leq \\
+\leq \max_{\substack{\textbf{x} \in \mathbb{X} \\ \left|\textbf{x}\right|\leq 1}}\min_{\substack{\textbf{z} \in \mathbb{Z} \\ \left|\textbf{z}\right|\leq 1}}||\textbf{x}-\textbf{z}|| + 
+\max_{\substack{\textbf{z} \in \mathbb{Z} \\ \left|\textbf{z}\right|\leq 1}}\min_{\substack{\textbf{y} \in \mathbb{Y} \\ \left|\textbf{y}\right|\leq 1}}||\textbf{z}-\textbf{y}||.
+\end{aligned}
+\end{equation}
+\end{proof}
